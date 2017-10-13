@@ -10,6 +10,10 @@ angular.module('News', [])
     {title:'Post 4', upvotes:4},
     {title:'Post 5', upvotes:3}
         ];
+	    
+	$scope.addPost = function() {
+    		$scope.posts.push({title:'A new post',upvotes:0});
+  	};
     }
     ]);
 	
