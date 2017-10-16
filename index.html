@@ -11,11 +11,15 @@
   </head>
   <body ng-app="News" ng-controller="MainCtrl">
   <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-  <div class="page-header"> 
-    <h1>News</h1>
+      <div class="col-md-6 col-md-offset-3">
+        <ui-view></ui-view>
+      </div>
   </div>
-
+<script type="text/ng-template" id="/home.html">
+    <div class="page-header">
+      <h1>News</h1>
+    </div>
+    
     <form ng-submit="addPost()" style = "margin-top30px;">
       <input type="text" ng-model="formContent"></input>
       <button type="submit">Post</button>
@@ -26,8 +30,9 @@
     <div ng-repeat="post in posts | orderBy: '-upvotes'">
       <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>
       {{post.title}} - upvotes: {{post.upvotes}}
+      <a href="#/posts/{{posts.indexOf(post)}}">Comments</a>
     </div>
-  </div>
-  </div>
+</script>
+
   </body>
   </html>
