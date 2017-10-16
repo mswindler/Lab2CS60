@@ -37,8 +37,6 @@ angular.module('News', ['ui.router'])
        	 		upvotes: 0,
          		comments: []
       	});
-      $scope.title = '';
-	 );
    	 $scope.formContent='';
   	};
 	    
