@@ -8,7 +8,7 @@ angular.module('News', ['ui.router'])
           url: '/home',
           templateUrl: '/home.html',
           controller: 'MainCtrl'
-        });
+        })
 	.state('posts', {
    		url: '/posts/{id}',
    		templateUrl: '/posts.html',
