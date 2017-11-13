@@ -8,5 +8,14 @@
   <div>
     {{test}}
   </div>
+  <form ng-submit="addComment()">
+    <input type="text" ng-model="formContent"></input>
+    <button type="submit">Add Comment</button>
+  </form>
+  
+  <div ng-repeat="comment in comments | orderBy:'-upvotes'">
+    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
+    {{comment.title}} - upvotes {{coment.upvotes}}
+  </div>
 </body>
 </html>
